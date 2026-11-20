@@ -54,7 +54,7 @@ export default function Home() {
       ) : (
         <div>
           <p>Connected: {address}</p>
-          <button onClick={disconnect}>Disconnect</button>
+          <button onClick={() => disconnect()}>Disconnect</button>
         </div>
       )}
       {isConnected && (
