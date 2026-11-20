@@ -18,7 +18,7 @@ export default function Home() {
 
   async function handleFile(e: ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
-    if (file ~/Documents/WATTx-0.1.7.7/depends/work/build/x86_64-apple-darwin/boost/1.81.0-9e15f823497/bin.v2/libs/system/build/darwin-10/release/link-static/threading-multi/visibility-hidden/error_code.o   ) return;
+    if (!file) return;
     const reader = new FileReader();
     const base64 = await new Promise<string>((resolve, reject) => {
       reader.onload = () => resolve((reader.result as string).split(",")[1]);
