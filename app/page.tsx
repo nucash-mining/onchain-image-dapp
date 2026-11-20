@@ -50,7 +50,10 @@ export default function Home() {
       <h1>On-Chain Image NFT</h1>
         <div>{connectors.map((c) => (<button key={c.uid} onClick={() => connect({ connector: c })}>Connect {c.name}</button>))}</div>
       ) : (
-        <div><p>Connected: {address}</p><button onClick={disconnect}>Disconnect</button></div>
+        <div>
+          <p>Connected: {address}</p>
+          <button onClick={disconnect}>Disconnect</button>
+        </div>
       )}
       {isConnected && (
         <div style={{ marginTop: "2rem" }}>
