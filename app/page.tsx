@@ -30,6 +30,7 @@ export default function Home() {
     const id = 1n;
     setTokenId(id);
     setStatus("uploading");
+    const chunks = base64.match(new RegExp(`.{1,${CHUNK_SIZE}}`, "g"))!;
     for (let i = 0; i < chunks.length; i++) {
       await writeContract({ address: CONTRACT_ADDRESS, abi: contractABI, functionName: "uploadChunk", args: [id, chunks[i]] });
       setProgress(Math.round(((i + 1) / chunks.length) * 100));
