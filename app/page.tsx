@@ -48,6 +48,7 @@ export default function Home() {
   return (
     <main style={{ maxWidth: 600, margin: "2rem auto", padding: "0 1rem" }}>
       <h1>On-Chain Image NFT</h1>
+      {!isConnected ? (
         <div>{connectors.map((c) => (<button key={c.uid} onClick={() => connect({ connector: c })}>Connect {c.name}</button>))}</div>
       ) : (
         <div>
