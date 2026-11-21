@@ -1,4 +1,4 @@
-export const CONTRACT_ADDRESS = "0xYOUR_DEPLOYED_ADDRESS" as const;
+export const CONTRACT_ADDRESS = "0xA67E27084EA87937E04E4D67C77F9640B4312769" as const;
 
 export const contractABI = [
   { type: "function", name: "mint", stateMutability: "nonpayable", inputs: [], outputs: [{ type: "uint256" }] },
