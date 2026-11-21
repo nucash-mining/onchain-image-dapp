@@ -1,7 +1,7 @@
 "use client";
 
 import { useAccount, useConnect, useDisconnect, useReadContract, useWriteContract } from "wagmi";
-import { useState, type ChangeEvent } from "react";
+import { useState, useEffect, type ChangeEvent } from "react";
 import { CONTRACT_ADDRESS, contractABI } from "../contract";
 
 const CHUNK_SIZE = 8000;
@@ -15,6 +15,10 @@ export default function Home() {
   const [tokenId, setTokenId] = useState<bigint | null>(null);
   const [progress, setProgress] = useState(0);
   const [imageSrc, setImageSrc] = useState<string | null>(null);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) return <div style={{ padding: "2rem" }}>Loading...</div>;
 
   async function handleFile(e: ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
