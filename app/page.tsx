@@ -1,7 +1,7 @@
-import OnChainImageNFT from "./page-client";
+import dynamic from "next/dynamic";
 
-export const dynamic = "force-dynamic";
+const OnChainImageNFT = dynamic(() => import("./page-client"), { ssr: false });
 
 export default function Page() {
   return <OnChainImageNFT />;
-}
+}   
